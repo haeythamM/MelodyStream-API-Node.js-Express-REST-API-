@@ -2,15 +2,12 @@ openapi: 3.0.0
 info:
   title: MelodyStream API
   version: 1.0.0
-  description: >
-    🎵 A RESTful API for managing music content including albums, songs, singers,
-    instrumentalists, instruments, and their relationships.
+  description: |
+    RESTful API for managing music content including albums, songs, singers, instruments, and relationships.
 
 servers:
   - url: https://zany-pancake-5prqvp5q4437x5w-3001.app.github.dev/api
-    description: Live API on GitHub Codespace
-  - url: http://localhost:3001/api
-    description: Local Development Server
+    description: Codespace Live API
 
 paths:
   /albums:
@@ -18,46 +15,123 @@ paths:
       summary: Get all albums
       responses:
         '200':
-          description: Returns a list of albums
+          description: Success
+    post:
+      summary: Add a new album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                album_name:
+                  type: string
+                production_year:
+                  type: integer
+                production_country:
+                  type: string
+                sales_manager_id:
+                  type: integer
+                  nullable: true
+              required: [album_name, production_year, production_country]
+      responses:
+        '201':
+          description: Album created
 
   /songs:
     get:
       summary: Get all songs
       responses:
         '200':
-          description: Returns a list of songs
+          description: Success
+    post:
+      summary: Add a new song
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                song_name:
+                  type: string
+                album_id:
+                  type: integer
+                duration:
+                  type: integer
+              required: [song_name, album_id, duration]
+      responses:
+        '201':
+          description: Song created
 
   /singers:
     get:
       summary: Get all singers
       responses:
         '200':
-          description: Returns a list of singers
+          description: Success
+    post:
+      summary: Add a new singer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                singer_name:
+                  type: string
+                country:
+                  type: string
+                birth_year:
+                  type: integer
+              required: [singer_name]
+      responses:
+        '201':
+          description: Singer created
 
   /song-singers:
     get:
       summary: Get all song-singer relationships
       responses:
         '200':
-          description: Returns links between songs and singers
-
-  /sales-managers:
-    get:
-      summary: Get all sales managers
+          description: Success
+    post:
+      summary: Link a singer to a song
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                song_id:
+                  type: integer
+                singer_id:
+                  type: integer
+              required: [song_id, singer_id]
       responses:
-        '200':
-          description: Returns a list of sales managers
+        '201':
+          description: Relationship created
 
   /instruments:
     get:
       summary: Get all instruments
       responses:
         '200':
-          description: Returns a list of instruments
+          description: Success
+
+  /sales-managers:
+    get:
+      summary: Get all sales managers
+      responses:
+        '200':
+          description: Success
 
   /instrumentalists:
     get:
       summary: Get all instrumentalists
       responses:
         '200':
-          description: Returns a list of instrumentalists
+          description: Success
