@@ -2,12 +2,11 @@ openapi: 3.0.0
 info:
   title: MelodyStream API
   version: 1.0.0
-  description: |
-    RESTful API for managing music content including albums, songs, singers, instruments, and relationships.
+  description: RESTful API for managing music content including albums, songs, singers, and more.
 
 servers:
   - url: https://zany-pancake-5prqvp5q4437x5w-3001.app.github.dev/api
-    description: Codespace Live API
+    description: GitHub Codespaces Live API
 
 paths:
   /albums:
@@ -16,28 +15,6 @@ paths:
       responses:
         '200':
           description: Success
-    post:
-      summary: Add a new album
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                album_name:
-                  type: string
-                production_year:
-                  type: integer
-                production_country:
-                  type: string
-                sales_manager_id:
-                  type: integer
-                  nullable: true
-              required: [album_name, production_year, production_country]
-      responses:
-        '201':
-          description: Album created
 
   /songs:
     get:
@@ -45,25 +22,6 @@ paths:
       responses:
         '200':
           description: Success
-    post:
-      summary: Add a new song
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                song_name:
-                  type: string
-                album_id:
-                  type: integer
-                duration:
-                  type: integer
-              required: [song_name, album_id, duration]
-      responses:
-        '201':
-          description: Song created
 
   /singers:
     get:
@@ -71,25 +29,6 @@ paths:
       responses:
         '200':
           description: Success
-    post:
-      summary: Add a new singer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                singer_name:
-                  type: string
-                country:
-                  type: string
-                birth_year:
-                  type: integer
-              required: [singer_name]
-      responses:
-        '201':
-          description: Singer created
 
   /song-singers:
     get:
@@ -97,34 +36,17 @@ paths:
       responses:
         '200':
           description: Success
-    post:
-      summary: Link a singer to a song
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                song_id:
-                  type: integer
-                singer_id:
-                  type: integer
-              required: [song_id, singer_id]
-      responses:
-        '201':
-          description: Relationship created
-
-  /instruments:
-    get:
-      summary: Get all instruments
-      responses:
-        '200':
-          description: Success
 
   /sales-managers:
     get:
       summary: Get all sales managers
+      responses:
+        '200':
+          description: Success
+
+  /instruments:
+    get:
+      summary: Get all instruments
       responses:
         '200':
           description: Success
