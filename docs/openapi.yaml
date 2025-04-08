@@ -3,14 +3,14 @@ info:
   title: MelodyStream API
   version: 1.0.0
   description: >
-    🎵 A RESTful API for managing music content including albums, songs, singers, 
-    instruments, instrumentalists, and their relationships.
+    🎵 A RESTful API for managing music content including albums, songs, singers,
+    instrumentalists, instruments, and their relationships.
 
 servers:
-  - url: https://haeythamm.github.io/Assignment-number-3-API
-    description: GitHub Pages Documentation
   - url: https://zany-pancake-5prqvp5q4437x5w-3001.app.github.dev/api
-    description: Live API deployed from Codespaces
+    description: Live API on GitHub Codespace
+  - url: http://localhost:3001/api
+    description: Local Development Server
 
 paths:
   /albums:
