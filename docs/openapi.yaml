@@ -2,10 +2,15 @@ openapi: 3.0.0
 info:
   title: MelodyStream API
   version: 1.0.0
-  description: RESTful API for managing music content including albums, songs, singers, and more.
+  description: >
+    🎵 A RESTful API for managing music content including albums, songs, singers, 
+    instruments, instrumentalists, and their relationships.
 
 servers:
-  - url: https://yourdomain.github.io/your-repo-name
+  - url: https://haeythamm.github.io/Assignment-number-3-API
+    description: GitHub Pages Documentation
+  - url: https://zany-pancake-5prqvp5q4437x5w-3001.app.github.dev/api
+    description: Live API deployed from Codespaces
 
 paths:
   /albums:
@@ -13,46 +18,46 @@ paths:
       summary: Get all albums
       responses:
         '200':
-          description: Success
+          description: Returns a list of albums
 
   /songs:
     get:
       summary: Get all songs
       responses:
         '200':
-          description: Success
+          description: Returns a list of songs
 
   /singers:
     get:
       summary: Get all singers
       responses:
         '200':
-          description: Success
+          description: Returns a list of singers
 
   /song-singers:
     get:
       summary: Get all song-singer relationships
       responses:
         '200':
-          description: Success
+          description: Returns links between songs and singers
 
   /sales-managers:
     get:
       summary: Get all sales managers
       responses:
         '200':
-          description: Success
+          description: Returns a list of sales managers
 
   /instruments:
     get:
       summary: Get all instruments
       responses:
         '200':
-          description: Success
+          description: Returns a list of instruments
 
   /instrumentalists:
     get:
       summary: Get all instrumentalists
       responses:
         '200':
-          description: Success
+          description: Returns a list of instrumentalists
