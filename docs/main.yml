@@ -1,0 +1,26 @@
+openapi: '3.1.1'
+info:
+  title: Music API
+  version: '1.0.0'
+  description: |
+    RESTful API to manage albums, songs, singers, instruments, and more.
+
+servers:
+  - url: http://localhost:3001/api
+    description: Local development server
+
+paths:
+  /test:
+    get:
+      summary: Sample test endpoint
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: API is working!
