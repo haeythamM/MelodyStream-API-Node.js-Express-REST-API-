@@ -17,6 +17,26 @@ app.use("/api/instruments", require("./routes/instruments"));
 app.use("/api/instrumentalists", require("./routes/instrumentalists"));
 app.use("/api/song-singers", require("./routes/songSingers"));
 
+// Sample POST route for testing JSON body fields
+app.post("/api/test-post", (req, res) => {
+  const {
+    album_name,
+    production_year,
+    production_country,
+    sales_manager_id
+  } = req.body;
+
+  res.json({
+    message: "Received POST data successfully",
+    data: {
+      album_name,
+      production_year,
+      production_country,
+      sales_manager_id
+    }
+  });
+});
+
 // Root route
 app.get("/", (req, res) => {
   res.send("🎵 Music API is running!");
