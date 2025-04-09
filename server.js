@@ -8,7 +8,6 @@ const YAML = require("yamljs");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
@@ -25,12 +24,10 @@ app.use("/api/instruments", require("./routes/instruments"));
 app.use("/api/instrumentalists", require("./routes/instrumentalists"));
 app.use("/api/song-singers", require("./routes/songSingers"));
 
-// Root Endpoint
 app.get("/", (req, res) => {
   res.send("🎵 Music API is running!");
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
