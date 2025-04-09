@@ -44,7 +44,7 @@ npm install
 ### 3. Start the Server (Dev Mode)
 ```bash
 # Starts using nodemon
-dnodemon server.js
+nodemon server.js
 ```
 Or (Production Mode):
 ```bash
