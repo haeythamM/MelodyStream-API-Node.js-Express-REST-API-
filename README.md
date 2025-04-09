@@ -41,14 +41,24 @@ cd Assignment-number-3-API
 npm install
 ```
 
-### 3. Start the Server (Dev Mode)
+### 3. Start the Server
+
+#### 🚀 Development Mode (Auto-restarts on file changes)
 ```bash
-# Starts using nodemon
+# Option 1: Run nodemon directly
 nodemon server.js
+
+# Option 2: Use npm script
+npm run dev
 ```
-Or (Production Mode):
+
+#### 📦 Production Mode
 ```bash
+# Option 1: Run Node directly
 node server.js
+
+# Option 2: Use npm script
+npm start
 ```
 
 ---
@@ -137,4 +147,4 @@ Feel free to open an issue or fork the project if you'd like to contribute.
 
 ---
 
-© 2025 MelodyStream. All rights reserved.
+© 2025 Haeytham Almalak. All rights reserved.
