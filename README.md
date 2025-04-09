@@ -91,7 +91,7 @@ http://localhost:3001/api
 
 ### 🔗 URL to access Swagger UI:
 ```
-http://localhost:3001/api-docs
+https://haeythamm.github.io/Assignment-number-3-API/#/
 ```
 
 ### 📂 How it Works:
