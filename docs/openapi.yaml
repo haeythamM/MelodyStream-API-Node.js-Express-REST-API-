@@ -15,6 +15,26 @@ paths:
       responses:
         '200':
           description: Success
+    post:
+      summary: Add a new album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                album_name:
+                  type: string
+                production_year:
+                  type: integer
+                production_country:
+                  type: string
+                sales_manager_id:
+                  type: integer
+      responses:
+        '201':
+          description: Album created successfully
 
   /songs:
     get:
@@ -22,6 +42,24 @@ paths:
       responses:
         '200':
           description: Success
+    post:
+      summary: Add a new song
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                song_name:
+                  type: string
+                album_id:
+                  type: integer
+                duration:
+                  type: integer
+      responses:
+        '201':
+          description: Song created successfully
 
   /singers:
     get:
@@ -29,6 +67,24 @@ paths:
       responses:
         '200':
           description: Success
+    post:
+      summary: Add a new singer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                singer_name:
+                  type: string
+                country:
+                  type: string
+                birth_year:
+                  type: integer
+      responses:
+        '201':
+          description: Singer created successfully
 
   /song-singers:
     get:
@@ -36,6 +92,22 @@ paths:
       responses:
         '200':
           description: Success
+    post:
+      summary: Link a singer to a song
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                song_id:
+                  type: integer
+                singer_id:
+                  type: integer
+      responses:
+        '201':
+          description: Link created successfully
 
   /sales-managers:
     get:
